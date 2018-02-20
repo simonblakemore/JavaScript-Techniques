@@ -1,0 +1,24 @@
+<doctype html>
+
+<script>
+let numbers = [11, 43, 9, 112, 64, 312, 92];
+
+let bigNumbers = numbers.filter(findBigNumbers);
+
+function findBigNumbers(number) {
+  return number > 100;
+}
+
+console.log(bigNumbers);
+
+let moreBigNumbers = numbers.filter(x => x > 100);
+
+console.log(moreBigNumbers);
+
+//////////////////////////////////////////////
+
+numbers = numbers.filter(x => x < 100);
+
+console.log(numbers);
+
+</script>

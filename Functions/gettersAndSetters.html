@@ -1,0 +1,51 @@
+<doctype html>
+
+<script>
+let jar = {
+  numberOfCookies: 10,
+  get cookies() {
+    return this.numberOfCookies;
+  },
+  set cookies(value) {
+    if(value >= 0 && value <= 10) {
+      this.numberOfCookies = value;
+    }else{
+      console.log("Please use a number betweeon 0 and 10");
+    }
+  }
+};
+
+console.log(jar.cookies);
+
+jar.cookies = 7;
+
+console.log(jar.cookies);
+
+jar.cookies = 14;
+///////////////////////////////////////////////////////////////
+
+let newJar = {};
+
+Object.defineProperty(newJar, "cookies", {
+  get() {
+    return this.value;
+  },
+  set(newValue) {
+    if(newValue >= 0 && newValue <= 10) {
+      this.value = newValue;
+    } else {
+      console.log("Please use a number between 0 and 10");
+    }
+  },
+  enumerable: true,
+  configurable: true
+});
+newJar.cookies = 8;
+
+console.log(newJar.cookies);
+
+newJar.cookies = 25;
+
+
+
+</script>

@@ -1,0 +1,18 @@
+<doctype html>
+
+<script>
+//Traditional function with arguments
+display("spaceship", 312, 112);
+
+function display(name, x, y) {
+  console.log(`name: ${name}, x: ${x}, y: ${y},`);
+}
+
+//Function with configuration object to improve readability
+displayClearly({name: "spaceship", x: 312, y: 112});
+
+function displayClearly(configObject) {
+  console.log(`name: ${configObject.name}, x: ${configObject.x}, y: ${configObject.y}`);
+}
+
+</script>

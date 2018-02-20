@@ -1,0 +1,35 @@
+<doctype html>
+
+<script>
+  let room = {
+    door: "open",
+    light: "on",
+    contents: ["carpet", "mouse", "katana"]
+  };
+
+  console.log(Object.keys(room));
+
+  let roomProperties = Object.keys(room);
+  for ( let key of roomProperties) {
+    let value = room[key];
+    console.log("key: " + key + ", value: " + value);
+  }
+
+  Object.keys(room).forEach(key => {
+    let value = room[key];
+    console.log("key: " + key + ", value: " + value);
+  });
+
+  for (let key in room) {
+    let value = room[key];
+    console.log("key: " + key + ", value: " + value);
+  }
+
+  for (let key in room) {
+    if (room.hasOwnProperty(key)) {
+      let value = room[key];
+      console.log("key: " + key + ", value: " + value);
+    }
+  }
+
+</script>

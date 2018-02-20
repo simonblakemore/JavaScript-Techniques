@@ -1,0 +1,30 @@
+<doctype html>
+
+<script>
+
+  //Assign default values to a function
+  function display(name = "rose", color = "red") {
+    console.log(`Name: ${name} Color: ${color}`);
+  }
+
+  display();
+
+  display("balloon");
+
+  display("computer", "beige");
+
+  //Use a spread operator (...) to read arguments as an array
+  function displayColors(...colorArray) {
+    for (let color of colorArray) console.log(`Color: ${color}`);
+  }
+
+  displayColors("red", "green", "blue");
+
+  //Reverse to tell the function to convert
+  //from array values to individual arguments
+  function displayNumbers(x, y, z) {
+    console.log(`X: ${x} Y: ${y} Z: ${z}`);
+  }
+
+  displayNumbers(...[12, 30, 10]);
+</script>

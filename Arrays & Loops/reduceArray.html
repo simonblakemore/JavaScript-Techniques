@@ -1,0 +1,36 @@
+<doctype html>
+
+<script>
+let numbers = [73, 19, 2, 144, 43, 7];
+
+let total = numbers.reduce(addNumbersTogether);
+
+function addNumbersTogether(a, b) {
+  return a + b;
+}
+
+console.log(total);
+////////////////////////////////////////////////////
+
+let anotherTotal = numbers.reduce((a, b) => a + b);
+console.log(anotherTotal);
+////////////////////////////////////////////////////
+
+
+let oneMoreTotal = numbers.reduce((a, b) => a + b, 100);
+console.log(oneMoreTotal);
+////////////////////////////////////////////////////
+
+//Reduce 2D array into 1D array
+let numbers2D = [[72, 19],[2, 144],[43, 7]];
+
+let numbers1D = numbers2D.reduce(flattenArray);
+
+function flattenArray(a, b) {
+  return a.concat(b);
+}
+
+console.log(numbers1D);
+
+
+</script>

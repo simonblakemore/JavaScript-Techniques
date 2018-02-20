@@ -1,0 +1,61 @@
+<doctype html>
+
+<script>
+let instruments = ["guitar", "piano", "tabla", "ocarina", "tabla"];
+
+instruments.some(find);
+
+function find(instrument) {
+  if (instrument === "tabla") {
+    console.log("Tabla Found!");
+    return true;
+  } else {
+    console.log("No Table Found...");
+    return false;
+  }
+}
+///////////////////////////////////////
+
+console.log("---------------------------------");
+
+let found = instruments.some(instrument => {
+  if(instrument === "tabla") {
+    return true;
+  }
+});
+
+if (found) {
+  console.log("tabla found!");
+}
+
+console.log("---------------------------------");
+///////////////////////////////////////////////////////
+
+let foundAgain = instruments.some(instrument => instrument === "tabla");
+if (foundAgain) console.log("tabla found!!!");
+
+console.log("---------------------------------");
+///////////////////////////////////////////////////////
+
+
+let numbers = [11, 43, 9, 112, 64, 15];
+
+let tooBig = numbers.some((number) => {
+  //Return true if number is greater than 100
+  return number > 100;
+});
+
+console.log(tooBig);
+
+console.log("---------------------------------");
+///////////////////////////////////////////////////////
+
+let tooBigAgain = numbers.some(number => number > 100);
+console.log(tooBigAgain);
+
+console.log("---------------------------------");
+///////////////////////////////////////////////////////
+
+
+
+</script>

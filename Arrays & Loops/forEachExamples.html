@@ -1,0 +1,45 @@
+<doctype html>
+
+<script>
+  let planets = ["jupiter","venus","saturn","mars"];
+
+  //Traditional For loop
+  console.log("For Loop ----------------");
+  for (let i = 0; i < planets.length; i++){
+    let planet = planets[i];
+    console.log(planet);
+  }
+  console.log("-------------------------");
+
+  //NOTE for loops tend to be highly optemized by javascript engines
+  //and are still the safest bet where you need to be looping through
+  //an array with thousands of objects.
+
+  //forEach Loop
+  console.log("forEach Loop ------------");
+  planets.forEach(displayElements);
+
+  function displayElements(element, i) {
+    console.log(i + ": " + element);
+  }
+  console.log("-------------------------");
+
+  let mountains =["everest","k2","kanchanjunga","lhotse"];
+  mountains.forEach(displayElements);
+  console.log("-------------------------");
+
+  function displayElementsAsString(element, i, array) {
+    console.log(array.toString());
+  }
+
+  planets.forEach(displayElementsAsString);
+  console.log("-------------------------");
+
+  //anonymous callback function
+  console.log("anonymous callback function");
+  planets.forEach((planet) => console.log(planet));
+  console.log("-------------------------");
+
+
+
+</script>
