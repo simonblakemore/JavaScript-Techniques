@@ -1,0 +1,88 @@
+<doctype html>
+
+<script>
+//Use a function to create a class
+function ES5animal() {
+  this.eyes = 2;
+  this.legs = 4;
+}
+
+let cat = new ES5animal();
+
+console.log(cat.eyes);
+
+let bird = new ES5animal;
+
+console.log(bird.eyes);
+
+bird.legs = 2;
+
+console.log(bird.legs);
+
+ES5animal.prototype.speak = () => {
+  console.log("Huh?");
+};
+
+bird.speak();
+
+
+//use an ES6 class
+class Animal {
+  constructor() {
+    this.legs = 4;
+    this.eyes = 2;
+    this.say = "Huh?";
+  }
+  speak() {
+    console.log(this.say);
+  }
+}
+
+let tiger = new Animal();
+tiger.say = "Roar";
+tiger.speak();
+
+//Use the constructor to pass custom arguments to initialize new objects
+class Person {
+  constructor(name, age, hairColor) {
+    this.name = name;
+    this.age = age;
+    this.hairColor = hairColor;
+  }
+  describe() {
+    console.log(`${this.name} is ${this.age} and has ${this.hairColor} hair`);
+  }
+}
+
+let john = new Person("John", 22, "blonde");
+john.describe();
+
+let joan = new Person("Joan", 35, "brown");
+joan.describe();
+
+//Use the constructor with a configuration object to set lots of custom
+//properties at one time
+class Rodent {
+  constructor(config) {
+     //Set the default properties
+     this.legs = 4;
+     this.eyes = 2;
+     this.say = "Huh?";
+
+     //Use the config object's properties
+     Object.assign(this, config);
+  }
+  speak() {
+    console.log(this.say);
+  }
+}
+
+let mouse = new Rodent({
+  say: "Squeak!",
+  tail: "curly"
+});
+
+mouse.speak();
+console.log(Object.keys(mouse));
+
+</script>

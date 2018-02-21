@@ -1,0 +1,28 @@
+<doctype html>
+
+<script>
+//Compose an object by wrapping it in a function that returns the object
+function animal() {
+  return {
+    legs: 4,
+    eyes: 2,
+    say: "Huh?",
+    speak () {
+      console.log(this.say);
+    }
+  };
+}
+
+let cat = animal();
+
+cat.speak();
+
+cat.say = "Meow!";
+
+cat.speak();
+
+let bird = animal();
+bird.say = "Chirp!";
+bird.speak();
+
+</script>

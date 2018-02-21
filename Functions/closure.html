@@ -1,0 +1,37 @@
+<doctype html>
+
+<script>
+
+
+function animal() {
+   //Declare the variables we'll use in this function
+   let newObject, words;
+
+   //A helper function to return a random integer within a minimum and maximum range
+   function random(min,max) {
+     return Math.floor(Math.random() * (max - min + 1)) + min;
+   }
+
+   //The animal's vocabulary
+   words = ["Food", "Sleep!", "Video games!"];
+
+   //A speak function that chooses random words
+   function speak() {
+     let say = words[random(0, 2)];
+     console.log(say);
+   }
+
+   //Create a 'newObject' and add the speak function to it
+   newObject = {};
+   newObject.speak = speak;
+
+   //Return the 'newOject'
+   return newObject;
+}
+
+
+//Create an animal and make it speak
+let cat = animal();
+cat.speak();
+
+</script>
